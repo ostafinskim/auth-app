@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: postgres:17.5 # docker hub
+    restart: unless-stopped
+    container_name: auth-app
+    ports:
+      - '5432:5432' # port forwarding
+    environment:
+      - POSTGRES_PASSWORD=password123
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=auth-app

@@ -7,7 +7,7 @@ export type NewTodo = InferInsertModel<typeof todos>
 
 export type AuthUserAndSession = {
 	Variables: {
-		user: typeof auth.$Infer.Session.user | null
+		user: typeof auth.$Infer.Session.user,
 		session: typeof auth.$Infer.Session.session | null
 	}
 }

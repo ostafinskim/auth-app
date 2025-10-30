@@ -9,5 +9,6 @@ export const insertTodo = async (todo: NewTodo) => {
 }
 
 export const getTodosByUserId = async (userId: string) => {
-	const [result] = await db.select().from(todos).where(eq(todos.userId, userId)).orderBy(desc(todos.createdAt))
+	const result = await db.select().from(todos).where(eq(todos.userId, userId)).orderBy(desc(todos.createdAt))
+	return result
 }
